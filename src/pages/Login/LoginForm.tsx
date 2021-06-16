@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import FadeIn from "react-fade-in";
 import { FC, useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 import visible from "../../assets/images/visible.svg";
@@ -48,7 +49,9 @@ export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
           value={formik.values.studentId}
         />
         {formik.touched.studentId && formik.errors.studentId ? (
-          <div className="error">{formik.errors.studentId}</div>
+          <FadeIn>
+            <div className="error">{formik.errors.studentId}</div>
+          </FadeIn>
         ) : null}
         <div className="password">
           <input
@@ -69,7 +72,9 @@ export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
           />
         </div>
         {formik.touched.password && formik.errors.password ? (
-          <div className="error">{formik.errors.password}</div>
+          <FadeIn>
+            <div className="error">{formik.errors.password}</div>
+          </FadeIn>
         ) : null}
         <button type="submit" disabled={loading} className="primary-btn ">
           {loading ? <ButtonLoader /> : "Log In"}

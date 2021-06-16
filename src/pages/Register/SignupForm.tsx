@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import FadeIn from "react-fade-in";
 import { FC, useRef, useState } from "react";
 import * as Yup from "yup";
 import visible from "../../assets/images/visible.svg";
@@ -52,7 +53,9 @@ export const SignupForm: FC<SignupFormProps> = ({ loading, mutate }) => {
           value={formik.values.fullname}
         />
         {formik.touched.fullname && formik.errors.fullname ? (
-          <div className="error">{formik.errors.fullname}</div>
+          <FadeIn>
+            <div className="error">{formik.errors.fullname}</div>
+          </FadeIn>
         ) : null}
         <input
           id="email"
@@ -65,7 +68,9 @@ export const SignupForm: FC<SignupFormProps> = ({ loading, mutate }) => {
           value={formik.values.email}
         />
         {formik.touched.email && formik.errors.email ? (
-          <div className="error">{formik.errors.email}</div>
+          <FadeIn>
+            <div className="error">{formik.errors.email}</div>
+          </FadeIn>
         ) : null}
         <input
           id="studentId"
@@ -75,11 +80,13 @@ export const SignupForm: FC<SignupFormProps> = ({ loading, mutate }) => {
           placeholder="Student Id"
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
-          value={formik.values.email}
+          value={formik.values.studentId}
         />
 
         {formik.touched.studentId && formik.errors.studentId ? (
-          <div className="error">{formik.errors.studentId}</div>
+          <FadeIn>
+            <div className="error">{formik.errors.studentId}</div>
+          </FadeIn>
         ) : null}
 
         <div className="password">
@@ -101,7 +108,10 @@ export const SignupForm: FC<SignupFormProps> = ({ loading, mutate }) => {
           />
         </div>
         {formik.touched.password && formik.errors.password ? (
-          <div className="error">{formik.errors.password}</div>
+          <FadeIn>
+            {" "}
+            <div className="error">{formik.errors.password}</div>
+          </FadeIn>
         ) : null}
         <button type="submit" disabled={loading} className="primary-btn ">
           {loading ? <ButtonLoader /> : "Sign up"}
