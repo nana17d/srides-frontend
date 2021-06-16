@@ -1,0 +1,41 @@
+.email-input {
+  height: 50px;
+  padding: 10px;
+  width: 300px;
+  border: 2px solid colors(deepBlue);
+  border-radius: 5px;
+
+  @include tablet {
+    height: 60px;
+    width: 400px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+}
+
+.auth-input {
+  margin-top: 20px;
+  height: 54px;
+  width: 300px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e0;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.profile-input {
+  height: 54px;
+  width: 280px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e0;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  @include tablet {
+    margin: 20px;
+    width: 380px;
+  }
+}

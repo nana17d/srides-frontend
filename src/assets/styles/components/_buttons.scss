@@ -1,0 +1,27 @@
+.primary-btn {
+  background-color: colors(mint-leaf);
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: colors(white);
+  font-size: 13px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+
+.secondary-btn {
+  color: colors(mint-leaf);
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: colors(white);
+  font-size: 13px;
+  outline: none;
+  text-decoration: none;
+  border: 1px solid colors(mint-leaf);
+}

@@ -1,0 +1,75 @@
+.register-page {
+  background-color: colors(very-light-green);
+  height: 100vh;
+  width: 100%;
+
+  .holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    overflow-y: auto;
+    padding-top: 50px;
+  }
+
+  .form-title {
+    color: colors(very-deep-blue);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .login-link {
+    font-size: 13px;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 25px;
+    color: colors(very-deep-blue);
+  }
+
+  button {
+    width: 300px;
+    margin-top: 20px;
+    height: 49px;
+    font-size: 16px;
+
+    &:disabled {
+      cursor: pointer;
+    }
+  }
+
+  .password {
+    display: flex;
+
+    img {
+      width: 22px;
+      margin-left: -40px;
+      height: 22px;
+      margin-top: 35px;
+    }
+  }
+
+  @include very-sm-mobile {
+    .hide-nav {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    form {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  input {
+    display: block;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+}

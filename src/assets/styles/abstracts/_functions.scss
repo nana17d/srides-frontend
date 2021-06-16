@@ -1,0 +1,7 @@
+@function colors($color) {
+    @return map-get($map: $colors, $key: $color);
+}
+
+@function viewport($viewport-dimension) {
+    @return map-get($map: $viewport, $key: $viewport-dimension);
+}
