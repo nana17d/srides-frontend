@@ -7,6 +7,6 @@ export const useUser = () => {
     const { data } = await axios.get(apiRoute);
     return data.data;
   };
-  const { data: user, isLoading } = useQuery("user", getUser);
-  return { user, loading: isLoading };
+  const { data, isLoading } = useQuery("user", getUser);
+  return { data, loading: isLoading };
 };

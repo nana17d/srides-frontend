@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { Loader } from "../components/Loader";
 import { useStore } from "../hooks/useStore";
-import { useUser } from "../hooks/query/useUser";
 import { hasToken } from "../config/accessToken";
 
 interface ProtectedRouteProps {
@@ -16,15 +15,15 @@ export const ProtectedRoute: FC<ProtectedRouteProps> = ({
   path,
   props,
 }) => {
-  const { user, loading } = useUser();
+  // const { user, loading } = useUser();
   const { logoutLoading } = useStore();
 
-  if (loading) return <Loader />;
+  // if (loading) return <Loader />;
 
   if (logoutLoading) return <Loader />;
   return hasToken() ? (
     <Route exact path={path}>
-      <Component user={user} {...props} />
+      <Component {...props} />
     </Route>
   ) : (
     <Redirect to={{ pathname: "/login" }} />

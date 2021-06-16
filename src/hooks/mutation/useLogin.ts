@@ -2,6 +2,7 @@ import { setAccessToken } from "./../../config/accessToken";
 import { useMutation, useQueryClient } from "react-query";
 import { useHistory } from "react-router-dom";
 import axios from "../../config/axios-config";
+import { setUser } from "../../config/user";
 
 export interface LoginDetails {
   studentId: string;
@@ -24,6 +25,7 @@ export const useLogin = () => {
   const { mutate, isLoading, error } = useMutation(loginUser, {
     onSuccess: async ({ data }) => {
       setAccessToken(data.accessToken);
+      setUser(data.user);
       queryClient.invalidateQueries("user");
       history.push("/");
     },
