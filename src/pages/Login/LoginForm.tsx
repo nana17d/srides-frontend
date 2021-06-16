@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import FadeIn from "react-fade-in";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useState } from "react";
 import * as Yup from "yup";
 import visible from "../../assets/images/visible.svg";
 import notVisible from "../../assets/images/notvisible.svg";
@@ -20,10 +20,6 @@ export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
       .required("Required"),
     password: Yup.string().min(6, "Too Short!").required("Required"),
   });
-  const inpuRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    inpuRef.current?.focus();
-  }, []);
   const formik = useFormik({
     initialValues: {
       studentId: "",
@@ -43,7 +39,6 @@ export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
           inputMode="numeric"
           className="auth-input"
           placeholder="Student Id"
-          ref={inpuRef}
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.studentId}
