@@ -1,5 +1,7 @@
 .navMenu {
   width: 100%;
+  background-color: #fff;
+  padding-top: 5px;
 }
 
 .isScrolling {
@@ -50,11 +52,11 @@
   }
 }
 
-// .main-nav-brand {
-//   @include media-breakpoint(lg) {
-//     margin-top: -50px;
-//   }
-// }
+.main-nav-brand {
+  @include media-breakpoint(lg) {
+    margin-top: -20px;
+  }
+}
 
 .nav-links-container {
   position: absolute !important;
@@ -64,7 +66,7 @@
 .nav-item {
   display: flex;
   align-items: center;
-  // margin-top: -40px;
+  margin-top: -10px;
 
   .primary-btn {
     text-decoration: none;
@@ -142,8 +144,7 @@
 
 
 .nav__profile {
-  margin-top: 10px;
-
+  margin-top: -10px;
 
   .profile__btn {
     display: flex;

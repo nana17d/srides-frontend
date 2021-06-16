@@ -4,5 +4,9 @@ import { MainNav } from "../../components/Navigationbar";
 interface HomeProps {}
 
 export const Home: FC<HomeProps> = () => {
-  return <MainNav />;
+  return (
+    <div className="home">
+      <MainNav />;
+    </div>
+  );
 };

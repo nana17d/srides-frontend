@@ -64,7 +64,7 @@ export const MainNav: FC<NavigationbarProps> = ({ openFullScreenModal }) => {
               <div className="nav-links-container">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="navLink mt-1 mx-4" to="about">
+                    <Link className="navLink mt-1 mx-4" to="/">
                       Home
                     </Link>
                     <span
@@ -76,7 +76,7 @@ export const MainNav: FC<NavigationbarProps> = ({ openFullScreenModal }) => {
                   </li>
 
                   <li className="nav-item">
-                    <Link className="navLink mt-1 mx-4" to="payments">
+                    <Link className="navLink mt-1 mx-4" to="/me/tickets">
                       My Tickets
                     </Link>
                     <span
