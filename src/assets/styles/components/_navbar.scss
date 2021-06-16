@@ -111,9 +111,20 @@
     text-align: center;
     height: 100%;
     width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    .modal-profile {
+      position: relative;
+      margin-top: 30%;
+      display: flex;
+      justify-content: center;
+    }
 
     ul {
-      margin-top: 50%;
+      // margin-top: 50%;
 
       li {
         padding-bottom: 50px;
@@ -153,7 +164,7 @@
     align-items: center;
     border-radius: 5px;
     width: 100px;
-    margin-left: 70px;
+    margin-left: 5.5%;
     color: white;
     position: absolute;
     font-weight: 500;
@@ -161,8 +172,6 @@
 
     &--logout {
       background-color: red;
-
-
     }
   }
 

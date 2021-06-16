@@ -9,7 +9,6 @@
         }
     }
 
-
     .body {
         position: absolute;
         text-align: center;
@@ -18,7 +17,7 @@
         transform: translate(-50%, -50%);
         max-height: 100%;
         padding-top: 50px;
-        overflow-y: auto;
+        // overflow-y: auto;
 
         @include big-tablet {
             overflow-y: visible;

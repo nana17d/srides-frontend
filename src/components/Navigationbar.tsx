@@ -25,7 +25,7 @@ export const AuthNav: FC<{}> = () => {
   );
 };
 interface NavigationbarProps {
-  openFullScreenModal?: () => void;
+  openFullScreenModal: () => void;
 }
 export const MainNav: FC<NavigationbarProps> = ({ openFullScreenModal }) => {
   const [isScrolling, setIsScrolling] = useState<boolean>();
@@ -55,7 +55,7 @@ export const MainNav: FC<NavigationbarProps> = ({ openFullScreenModal }) => {
               </h2>
             </Link>
             <button
-              // onClick={openFullScreenModal}
+              onClick={openFullScreenModal}
               className="navToggler d-lg-none"
             >
               <img src={navToggleBtn} alt="toggle" />
