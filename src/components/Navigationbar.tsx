@@ -1,5 +1,6 @@
 import { FC } from "react";
 import FadeIn from "react-fade-in";
+import logo from "../assets/images/logo.svg";
 import { Link } from "react-router-dom";
 
 export const AuthNav: FC<{}> = () => {
@@ -10,7 +11,8 @@ export const AuthNav: FC<{}> = () => {
           <Link className="navbar-brand" to="/">
             <FadeIn>
               <h2>
-                S<span>rides</span>
+                <img className="nav-logo" src={logo} alt="S" />{" "}
+                <span>rides</span>
               </h2>
             </FadeIn>
           </Link>
