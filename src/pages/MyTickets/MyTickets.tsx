@@ -1,8 +1,10 @@
 import { FC, useState } from "react";
 import FadeIn from "react-fade-in";
-import { Footer } from "../../components/Footer";
 import { MainNav } from "../../components/Navigationbar";
 import { NavModal } from "../../components/NavModal";
+import { useMyTickets } from "../../hooks/query/useFetchTickets";
+import { Loader } from "../../components/Loader";
+import { TicketsCard } from "../../components/TicketsCard";
 
 interface MyTicketsProps {}
 
@@ -16,6 +18,9 @@ const MyTickets: FC<MyTicketsProps> = () => {
     setShowFullScreenModal(false);
   };
 
+  const { loading, data } = useMyTickets();
+  if (loading) return <Loader />;
+
   return (
     <div className="tickets">
       {showFullScreenModal ? (
@@ -26,8 +31,16 @@ const MyTickets: FC<MyTicketsProps> = () => {
       ) : (
         <>
           <MainNav openFullScreenModal={openFullScreenModal} />
-          <div className="body"></div>
-          <Footer />
+          <FadeIn>
+            <div className="body container">
+              <div className="page-head">
+                <h1>My Tickets</h1>
+              </div>
+              <TicketsCard>
+                <div></div>
+              </TicketsCard>
+            </div>
+          </FadeIn>
         </>
       )}
     </div>
