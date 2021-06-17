@@ -16,6 +16,7 @@ export const Home: FC<HomeProps> = () => {
   const closeFullScreenModal = (): void => {
     setShowFullScreenModal(false);
   };
+
   return (
     <div className="home">
       {showFullScreenModal ? (

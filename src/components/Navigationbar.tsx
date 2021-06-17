@@ -28,23 +28,10 @@ interface NavigationbarProps {
   openFullScreenModal: () => void;
 }
 export const MainNav: FC<NavigationbarProps> = ({ openFullScreenModal }) => {
-  const [isScrolling, setIsScrolling] = useState<boolean>();
   const user = getUser();
-  useEffect(() => {
-    const navScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolling(true);
-      } else {
-        setIsScrolling(false);
-      }
-    };
-    window.addEventListener("scroll", navScroll);
-    return () => {
-      window.removeEventListener("scroll", navScroll);
-    };
-  });
+
   return (
-    <div className={`navMenu ${isScrolling ? "isScrolling" : ""} fixed-top`}>
+    <div className={`navMenu fixed-top`}>
       <div className="container">
         <FadeIn>
           <nav className="navbar navbar-light navbar-expand-lg my-3">
