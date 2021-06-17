@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import FadeIn from "react-fade-in";
 import logo from "../assets/images/logo.svg";
 import { Link } from "react-router-dom";
