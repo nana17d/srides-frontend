@@ -66,12 +66,12 @@ export const MainNav: FC<NavigationbarProps> = ({ openFullScreenModal }) => {
                     <Link className="navLink mt-1 mx-4" to="/me/tickets">
                       My Tickets
                     </Link>
-                    <span
+                    {/* <span
                       style={{ fontSize: "8px" }}
                       className="material-icons mt-2"
                     >
                       fiber_manual_record
-                    </span>
+                    </span> */}
                   </li>
                 </ul>
               </div>

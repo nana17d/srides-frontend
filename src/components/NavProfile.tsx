@@ -38,11 +38,13 @@ export const NavProfile: FC<NavProfileProps> = ({ className }) => {
         <span className=" material-icons">expand_more</span>
       </div>
       {active && (
-        <div
-          onClick={handleLogout}
-          className="profile__btn profile__btn--logout"
-        >
-          Logout
+        <div className="profile__btn__container">
+          <div
+            onClick={handleLogout}
+            className="profile__btn profile__btn--logout"
+          >
+            Logout
+          </div>
         </div>
       )}
     </div>
