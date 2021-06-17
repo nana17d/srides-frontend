@@ -1,0 +1,29 @@
+footer {
+  background-color: white;
+  margin-top: 50px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-top: 0.8px solid lighten($color: colors(ash), $amount: 50);
+  color: colors(deepBlue);
+  font-weight: 500;
+
+  .logo {
+    width: 30px;
+    vertical-align: middle;
+
+  }
+
+  span {
+    vertical-align: middle;
+    margin-left: 3px;
+  }
+
+  .copyright {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+    color: colors(deepBlue);
+  }
+}

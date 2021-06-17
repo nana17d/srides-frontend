@@ -3,6 +3,7 @@ import { MainNav } from "../../components/Navigationbar";
 import FadeIn from "react-fade-in";
 import { NavModal } from "../../components/NavModal";
 import busStop from "../../assets/images/undraw_Bus_stop_re_h8ej(1).svg";
+import { Footer } from "../../components/Footer";
 
 interface HomeProps {}
 
@@ -47,6 +48,7 @@ export const Home: FC<HomeProps> = () => {
               </div>
             </div>
           </div>
+          <Footer />
         </>
       )}
     </div>
