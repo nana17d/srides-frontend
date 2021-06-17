@@ -1,0 +1,34 @@
+.empty-orders {
+    width: 100%;
+
+    .body-info {
+        text-align: center;
+        color: colors(blue-gray);
+        margin-top: 50px;
+
+
+        h1 {
+            margin-top: 10px;
+            color: colors(blue-gray);
+
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        @include tablet {
+            margin-top: 100px;
+
+            h1 {
+                margin-top: 20px;
+            }
+
+            p {
+                margin-top: 20px;
+            }
+        }
+    }
+
+
+}

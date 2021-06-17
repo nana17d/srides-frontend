@@ -5,6 +5,7 @@ import { NavModal } from "../../components/NavModal";
 import { useMyTickets } from "../../hooks/query/useFetchTickets";
 import { Loader } from "../../components/Loader";
 import { TicketsCard } from "../../components/TicketsCard";
+import { EmptyOrders } from "../../components/EmptyOrders";
 
 interface MyTicketsProps {}
 
@@ -37,7 +38,9 @@ const MyTickets: FC<MyTicketsProps> = () => {
                 <h1>My Tickets</h1>
               </div>
               <TicketsCard>
-                <div></div>
+                <div>
+                  <EmptyOrders />
+                </div>
               </TicketsCard>
             </div>
           </FadeIn>
