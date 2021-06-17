@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./assets/styles/main.scss";
+import "react-ts-modal/css/styles.css";
 import App from "./App";
 
 ReactDOM.render(

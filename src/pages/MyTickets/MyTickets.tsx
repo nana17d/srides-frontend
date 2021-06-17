@@ -20,7 +20,8 @@ const MyTickets: FC<MyTicketsProps> = () => {
   };
 
   const { loading, data } = useMyTickets();
-  if (loading) return <Loader />;
+  // if (loading) return <Loader />;
+  if(data)console.log(data.tickets)
 
   return (
     <div className="tickets">
@@ -38,9 +39,7 @@ const MyTickets: FC<MyTicketsProps> = () => {
                 <h1>My Tickets</h1>
               </div>
               <TicketsCard>
-                <div>
-                  <EmptyOrders />
-                </div>
+                {loading ?<Loader/>:<EmptyOrders/>}
               </TicketsCard>
             </div>
           </FadeIn>

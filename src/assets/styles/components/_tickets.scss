@@ -1,0 +1,24 @@
+.ticket {
+    position: relative;
+
+    &__top {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+    }
+
+    &__body {
+        z-index: 1;
+        height: 300px;
+        padding: 20px 0px;
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        transform: rotate(180deg);
+    }
+}

@@ -1,5 +1,7 @@
 import { FC } from "react";
+import { modal } from "react-ts-modal";
 import emptyBox from "../assets/images/emptybox.svg";
+import TicketModal from "./TicketsModal";
 
 export const EmptyOrders: FC<{}> = () => {
   return (
@@ -9,7 +11,10 @@ export const EmptyOrders: FC<{}> = () => {
           <img src={emptyBox} alt="" />
         </div>
         <h1>No Tickets</h1>
-        <p>Generate a ticket to see it here</p>
+        <p onClick={() => modal.show("tickets-modal")}>
+          Generate a ticket to see it here
+        </p>
+        <TicketModal />
       </div>
     </div>
   );
