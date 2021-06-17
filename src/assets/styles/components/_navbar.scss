@@ -156,20 +156,31 @@
 
 .nav__profile {
   margin-top: -10px;
+  position: relative;
 
   .profile__btn {
     display: flex;
     justify-content: center;
     height: 40px;
     align-items: center;
-    border-radius: 3px;
-    width: 100px;
-    margin-left: 70px;
-    margin-top: 10px;
     color: white;
-    position: absolute;
     font-weight: 500;
     cursor: pointer;
+    width: 70%;
+    border-radius: 3px;
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      position: absolute;
+      top: 50px;
+      border-radius: 3px;
+      width: 130%;
+      left: -15%;
+      padding: 10px 0px;
+    }
 
     &--logout {
       background-color: #E01608;
