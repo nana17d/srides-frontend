@@ -25,6 +25,7 @@ export const useLogout = () => {
       history.push("/login");
       setLogoutLoading(false);
     },
+    retry: 1,
   });
   useEffect(() => {
     if (isLoading) setLogoutLoading(true);

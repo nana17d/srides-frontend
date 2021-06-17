@@ -29,6 +29,7 @@ export const useLogin = () => {
       queryClient.invalidateQueries("user");
       history.push("/");
     },
+    retry: 1,
   });
 
   return { mutate, loading: isLoading, error };
