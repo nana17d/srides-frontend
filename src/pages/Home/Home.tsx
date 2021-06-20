@@ -4,6 +4,7 @@ import FadeIn from "react-fade-in";
 import { NavModal } from "../../components/NavModal";
 import busStop from "../../assets/images/undraw_Bus_stop_re_h8ej(1).svg";
 import { Footer } from "../../components/Footer";
+import { TicketGeneratingForm } from "./TicketGeneratingForm";
 
 interface HomeProps {}
 
@@ -31,7 +32,7 @@ export const Home: FC<HomeProps> = () => {
             <div className="header-title">
               <h1>Online Bus Ticket Generator</h1>
             </div>
-            <div className="ticket-form"></div>
+            <TicketGeneratingForm />
             <div className="about-section row">
               <div className="col-12 abt-text">
                 <h1>

@@ -92,5 +92,67 @@
 
             }
         }
+
+
+        .generate-ticket {
+            margin-top: 50px;
+
+            .success-alert {
+                display: flex;
+                justify-content: center;
+
+                div {
+                    width: 300px;
+                    line-height: 20px;
+
+                    @include media-breakpoint(xl) {
+                        width: 50%;
+                    }
+                }
+            }
+
+            .error-handler {
+                display: flex;
+                justify-content: center;
+
+
+                p {
+                    font-size: 13px;
+                }
+
+                .alert {
+                    width: 300px;
+                    height: 50px;
+
+                    @include media-breakpoint(xl) {
+                        width: 500px;
+                    }
+                }
+            }
+
+            .ticket-input {
+                margin-top: 20px;
+                height: 54px;
+                width: 270px;
+                background: #ffffff;
+                border: 1.5px solid #cbd5e0;
+                padding-left: 10px;
+                box-sizing: border-box;
+                border-radius: 4px;
+                color: colors(deepBlue);
+            }
+
+            .error {
+                color: red;
+                font-size: 12px;
+                margin-top: 3px;
+                text-align: left;
+                display: block;
+            }
+
+            button {
+                width: 200px;
+            }
+        }
     }
 }
