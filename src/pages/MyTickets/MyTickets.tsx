@@ -6,6 +6,7 @@ import { useMyTickets } from "../../hooks/query/useFetchTickets";
 import { Loader } from "../../components/Loader";
 import { TicketsCard } from "../../components/TicketsCard";
 import { EmptyOrders } from "../../components/EmptyOrders";
+import { TicketsTable } from "./TicketsTable";
 
 interface MyTicketsProps {}
 
@@ -21,7 +22,7 @@ const MyTickets: FC<MyTicketsProps> = () => {
 
   const { loading, data } = useMyTickets();
   // if (loading) return <Loader />;
-  if(data)console.log(data.tickets)
+  if (data) console.log(data.tickets);
 
   return (
     <div className="tickets">
@@ -39,7 +40,13 @@ const MyTickets: FC<MyTicketsProps> = () => {
                 <h1>My Tickets</h1>
               </div>
               <TicketsCard>
-                {loading ?<Loader/>:<EmptyOrders/>}
+                {loading ? (
+                  <Loader />
+                ) : data && data.tickets.length > 0 ? (
+                  <TicketsTable data={data.tickets} />
+                ) : (
+                  <EmptyOrders />
+                )}
               </TicketsCard>
             </div>
           </FadeIn>

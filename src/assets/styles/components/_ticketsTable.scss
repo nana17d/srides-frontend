@@ -1,0 +1,63 @@
+#table {
+    width: 100%;
+    margin-top: -120px;
+
+
+    thead {
+        font-size: 12px;
+        background-color: #f7fafc;
+        height: 24px;
+        text-align: left;
+
+        tr {
+            width: 100%;
+            background-color: #f7fafc;
+
+        }
+    }
+
+    th {
+        color: colors(deepBlue);
+        opacity: 0.3;
+        padding-left: 40px;
+        padding-top: 7px;
+    }
+
+    td {
+        padding-left: 40px;
+        height: 50px;
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 16px;
+        color: #043053;
+    }
+
+    tbody {
+        tr:hover {
+            background: #f7fafc;
+            cursor: pointer;
+        }
+
+        td {
+            font-size: 12.5px;
+            line-height: 15px;
+            cursor: pointer;
+
+
+            @include tablet {
+                font-size: 13px;
+                line-height: 20px;
+            }
+
+            p {
+                color: colors(mint-leaf);
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+}

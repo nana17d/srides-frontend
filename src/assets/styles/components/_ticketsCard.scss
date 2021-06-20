@@ -36,14 +36,14 @@
      }
 
      .body {
-         .loader {
-             margin-top: 120px;
-         }
+     .loader {
+         margin-top: 120px;
+     }
 
-         @include tablet {
-             .loader {
-                 margin-top: 180px;
-             }
+     @include tablet {
+         .loader {
+             margin-top: 180px;
          }
      }
+ }
  }
