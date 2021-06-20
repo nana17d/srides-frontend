@@ -13,10 +13,18 @@ interface Ticket {
   date: string;
 }
 
+interface tHolder {
+  from: string;
+  to: string;
+  date: string;
+}
+
 export type State = {
   logoutLoading: boolean;
   fullScreenModalState: boolean;
   ticket: Ticket;
+  tHolder: tHolder;
+  setTholder(ticket: tHolder): void;
   setTicket(ticket: Ticket): void;
   setLogoutLoading: (loading: boolean) => void;
   setFullScreenModalState: (action: boolean) => void;
@@ -26,6 +34,14 @@ export const useStore = create<State>((set: SetState<State>) => ({
     from: "",
     to: "",
     date: "",
+  },
+  tHolder: {
+    from: "",
+    to: "",
+    date: "",
+  },
+  setTholder(ticket: tHolder) {
+    set(() => ({ tHolder: ticket }));
   },
   setTicket(ticket: Ticket) {
     set(() => ({ ticket }));

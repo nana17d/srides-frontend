@@ -7,6 +7,8 @@ import { Loader } from "../../components/Loader";
 import { TicketsCard } from "../../components/TicketsCard";
 import { EmptyOrders } from "../../components/EmptyOrders";
 import { TicketsTable } from "./TicketsTable";
+import TicketsModal from "../../components/TicketsModal";
+import Ticket from "../../components/Ticket";
 
 interface MyTicketsProps {}
 
@@ -21,8 +23,6 @@ const MyTickets: FC<MyTicketsProps> = () => {
   };
 
   const { loading, data } = useMyTickets();
-  // if (loading) return <Loader />;
-  if (data) console.log(data.tickets);
 
   return (
     <div className="tickets">
@@ -50,6 +50,9 @@ const MyTickets: FC<MyTicketsProps> = () => {
               </TicketsCard>
             </div>
           </FadeIn>
+          <TicketsModal>
+            <Ticket />
+          </TicketsModal>
         </>
       )}
     </div>

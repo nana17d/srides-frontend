@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
 import { FC } from "react";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import { useStore } from "../../hooks/useStore";
+import { modal } from "react-ts-modal";
 
 interface TicketsTableProps {
   data: any;
@@ -8,9 +10,11 @@ interface TicketsTableProps {
 
 export const TicketsTable: FC<TicketsTableProps> = ({ data }) => {
   dayjs.extend(localizedFormat);
-  const colors: any = {
-    active: "#20AE6B",
-    canceled: "#FF3D00",
+  const { setTicket } = useStore();
+
+  const handleClick = (ticket: any) => {
+    setTicket(ticket);
+    modal.show("tickets-modal");
   };
   return (
     <div>
@@ -21,28 +25,21 @@ export const TicketsTable: FC<TicketsTableProps> = ({ data }) => {
             <th scope="col">DATE</th>
             <th scope="col">FROM</th>
             <th scope="col">TO</th>
+            <th scope="col">BUS</th>
             <th scope="col">SEATNO</th>
-            <th scope="col">STATUS</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           {data.map((ticket: any) => {
             return (
-              <tr key={ticket.ticketId}>
+              <tr onClick={() => handleClick(ticket)} key={ticket.ticketId}>
                 <td>#{ticket.ticketId}</td>
                 <td>{dayjs(ticket.date).format("LL")}</td>
                 <td>{ticket.from}</td>
                 <td>{ticket.to}</td>
+                <td>{ticket.bus}</td>
                 <td>{ticket.seatNo}</td>
-                <td
-                  style={{
-                    color: colors[ticket.status],
-                    fontSize: "12px",
-                  }}
-                >
-                  {ticket.status}
-                </td>
                 <td></td>
               </tr>
             );

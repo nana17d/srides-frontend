@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import FadeIn from "react-fade-in";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -20,7 +20,7 @@ export const TicketGeneratingForm: FC<TicketGeneratingFormProps> = () => {
   });
 
   const history = useHistory();
-  const { setTicket, ticket } = useStore();
+  const { setTholder: setTicket, tHolder: ticket } = useStore();
 
   const buses = [
     "Yutong Bus GR 2001-21",
@@ -34,6 +34,9 @@ export const TicketGeneratingForm: FC<TicketGeneratingFormProps> = () => {
     return Math.floor(Math.random() * limit) + init;
   };
   const { mutate, loading, isSuccess, error } = useGenerateTicket();
+  useEffect(() => {
+    if (isSuccess) setTicket({ to: "", from: "", date: "" });
+  }, [isSuccess, setTicket]);
   const formik = useFormik({
     initialValues: {
       from: ticket.from,
@@ -52,6 +55,7 @@ export const TicketGeneratingForm: FC<TicketGeneratingFormProps> = () => {
         seatNo: `${generateRandomNumber(25, 1)}`,
         bus: `${buses[generateRandomNumber(buses.length - 1)]}`,
       });
+      setTicket({ to: "", from: "", date: "" });
     },
     validationSchema,
   });
