@@ -47,6 +47,7 @@ export const TicketGeneratingForm: FC<TicketGeneratingFormProps> = () => {
       if (!hasToken() && !getUser()) {
         history.push("/login");
         setTicket({ from, to, date });
+        return;
       }
       await mutate({
         from,
