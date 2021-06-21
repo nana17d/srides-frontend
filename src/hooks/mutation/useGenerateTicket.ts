@@ -23,6 +23,7 @@ export const useGenerateTicket = () => {
   const { mutate, isLoading, error, isSuccess } = useMutation(generateTicket, {
     onSuccess: async () => {
       queryClient.invalidateQueries("my-tickets");
+      queryClient.invalidateQueries("business-data");
     },
 
     retry: 1,

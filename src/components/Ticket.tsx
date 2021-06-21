@@ -82,14 +82,12 @@ const Ticket: React.FC<{}> = () => {
                 </h2>
               </div>
             </div>
-            {ticket && (
-              <div className="qr-code">
-                <QRCode
-                  fgColor="#043053"
-                  value={ticket.ticketId! || "ticketid"}
-                />
-              </div>
-            )}
+            <div className="qr-code">
+              <QRCode
+                fgColor="#043053"
+                value={`#${ticket.ticketId!}` || "ticketid"}
+              />
+            </div>
           </div>
         </div>
       </div>

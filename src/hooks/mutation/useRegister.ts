@@ -29,6 +29,7 @@ export const useRegister = () => {
       setAccessToken(data.accessToken);
       setUser(data.user);
       queryClient.invalidateQueries("user");
+      queryClient.invalidateQueries("business-data");
       history.push("/");
     },
     retry: 1,
