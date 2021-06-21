@@ -1,7 +1,6 @@
 .ticket {
     position: relative;
-    height: 650px;
-
+    height: 800px;
 
     &__logo {
         .ticket-id {
@@ -90,4 +89,14 @@
         width: 100%;
         transform: rotate(180deg);
     }
+
+    .qr-code {
+        margin-top: 35px;
+    }
+}
+
+.tickets-modal {
+    z-index: 1000;
+    position: fixed;
+    padding-top: 100px;
 }

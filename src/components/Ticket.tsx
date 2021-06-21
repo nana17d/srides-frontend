@@ -3,6 +3,7 @@ import logo from "../assets/images/logo.svg";
 import { useStore } from "../hooks/useStore";
 import { getUser } from "../config/user";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import QRCode from "qrcode.react";
 import dayjs from "dayjs";
 
 const Ticket: React.FC<{}> = () => {
@@ -81,6 +82,14 @@ const Ticket: React.FC<{}> = () => {
                 </h2>
               </div>
             </div>
+            {ticket && (
+              <div className="qr-code">
+                <QRCode
+                  fgColor="#043053"
+                  value={ticket.ticketId! || "ticketid"}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
